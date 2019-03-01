@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ILSpyConvert", "src\ILSpyConvert.csproj", "{52CE2F30-D8A5-4294-9382-294C02D038EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AnyCPU = Debug|AnyCPU
+		Release|AnyCPU = Release|AnyCPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52CE2F30-D8A5-4294-9382-294C02D038EA}.Debug|AnyCPU.ActiveCfg = Debug|Any CPU
+		{52CE2F30-D8A5-4294-9382-294C02D038EA}.Debug|AnyCPU.Build.0 = Debug|Any CPU
+		{52CE2F30-D8A5-4294-9382-294C02D038EA}.Release|AnyCPU.ActiveCfg = Release|Any CPU
+		{52CE2F30-D8A5-4294-9382-294C02D038EA}.Release|AnyCPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

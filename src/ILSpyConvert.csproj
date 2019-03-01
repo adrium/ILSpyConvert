@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		<ProjectGuid>{52CE2F30-D8A5-4294-9382-294C02D038EA}</ProjectGuid>
+		<OutputType>Exe</OutputType>
+		<RootNamespace>Adrium.Snippets</RootNamespace>
+		<AssemblyName>ILSpyConvert</AssemblyName>
+		<TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<OutputPath>..\bin\Debug</OutputPath>
+		<DefineConstants>DEBUG;</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+		<ExternalConsole>true</ExternalConsole>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<Optimize>true</Optimize>
+		<OutputPath>..\bin\Release</OutputPath>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+		<ExternalConsole>true</ExternalConsole>
+	</PropertyGroup>
+	<ItemGroup>
+		<Reference Include="System" />
+		<Reference Include="Humanizer">
+		  <HintPath>..\packages\Humanizer.Core.2.2.0\lib\netstandard1.0\Humanizer.dll</HintPath>
+		</Reference>
+		<Reference Include="ICSharpCode.Decompiler">
+			<HintPath>..\packages/ICSharpCode.Decompiler.4.0.0.4521/lib/net45/ICSharpCode.Decompiler.dll</HintPath>
+		</Reference>
+		<Reference Include="System.Collections.Immutable">
+		  <HintPath>..\packages\System.Collections.Immutable.1.5.0\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+		</Reference>
+		<Reference Include="System.Reflection.Metadata">
+		  <HintPath>..\packages\System.Reflection.Metadata.1.6.0\lib\portable-net45+win8\System.Reflection.Metadata.dll</HintPath>
+		</Reference>
+		<Reference Include="System.ValueTuple">
+		  <HintPath>..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Include="Program.cs" />
+		<Compile Include="AssemblyInfo.cs" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="packages.config" />
+	</ItemGroup>
+	<Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
