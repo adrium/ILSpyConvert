@@ -1,6 +1,7 @@
 using System;
 using ICSharpCode.Decompiler;
 using ICSharpCode.Decompiler.CSharp;
+using ICSharpCode.Decompiler.CSharp.Transforms;
 
 namespace Adrium.Snippets
 {
@@ -21,6 +22,8 @@ namespace Adrium.Snippets
 			}
 
 			var decompiler = new CSharpDecompiler(args[1], new DecompilerSettings((LanguageVersion)versionInt));
+			decompiler.AstTransforms.Add(new EscapeInvalidIdentifiers());
+			decompiler.AstTransforms.Add(new RemoveCLSCompliantAttribute());
 			var str = decompiler.DecompileWholeModuleAsString();
 
 			Console.WriteLine(str);
