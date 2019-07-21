@@ -26,6 +26,9 @@ namespace Adrium.Snippets
 			decompiler.AstTransforms.Add(new RemoveCLSCompliantAttribute());
 			var str = decompiler.DecompileWholeModuleAsString();
 
+			var version = typeof(CSharpDecompiler).Assembly.GetName().Version.ToString();
+
+			Console.Error.WriteLine("/* ICSharpCode.Decompiler v" + version + " */");
 			Console.WriteLine(str);
 		}
 	}

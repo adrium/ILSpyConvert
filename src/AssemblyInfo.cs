@@ -1,4 +1,4 @@
 using System.Reflection;
 
 [assembly: AssemblyTitle("ILSpyConvert")]
-[assembly: AssemblyVersion("1.1")]
+[assembly: AssemblyVersion("1.2")]
