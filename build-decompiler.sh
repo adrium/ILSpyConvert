@@ -12,8 +12,8 @@ baseCommitRev=1
 
 major=5
 minor=0
-build=0
-versionName=preview3
+build=2
+versionName=
 
 revision=$(( $(git rev-list --count "$baseCommit..HEAD") + 1 ))
 shortCommitHash=$(git rev-parse --short=8 HEAD)
@@ -25,7 +25,7 @@ cp Properties/AssemblyInfo.template.cs Properties/AssemblyInfo.cs
 
 sed -i s/'\$INSERTVERSION\$'/"$fullVersionNumber"/g Properties/AssemblyInfo.cs
 sed -i s/'\$INSERTBRANCHPOSTFIX\$'//g Properties/AssemblyInfo.cs
-sed -i s/'\$INSERTVERSIONNAMEPOSTFIX\$'/"-$versionName"/g Properties/AssemblyInfo.cs
+sed -i s/'\$INSERTVERSIONNAMEPOSTFIX\$'/"$versionName"/g Properties/AssemblyInfo.cs
 sed -i s/'\$INSERTSHORTCOMMITHASH\$'/"$shortCommitHash"/g Properties/AssemblyInfo.cs
 
 sed -i 's/netstandard2.0/net45/' ICSharpCode.Decompiler.csproj
