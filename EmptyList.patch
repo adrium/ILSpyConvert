@@ -1,0 +1,13 @@
+diff --git a/ICSharpCode.Decompiler/Util/EmptyList.cs b/ICSharpCode.Decompiler/Util/EmptyList.cs
+index 2b4e6c45d..HEAD 100644
+--- a/ICSharpCode.Decompiler/Util/EmptyList.cs
++++ b/ICSharpCode.Decompiler/Util/EmptyList.cs
+@@ -114,7 +114,7 @@
+ 
+ 	public static class Empty<T>
+ 	{
+-		public static readonly T[] Array = System.Array.Empty<T>();
++		public static readonly T[] Array = new T[0];
+ 	}
+ 
+ 	public struct Unit { }

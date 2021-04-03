@@ -5,14 +5,17 @@ if [ ! -d "/tmp/ILSpy/ICSharpCode.Decompiler" ]; then
 	exit
 fi
 
+cp *.patch /tmp/ILSpy/ICSharpCode.Decompiler
 cd /tmp/ILSpy/ICSharpCode.Decompiler
+
+git checkout v6.2.1
 
 baseCommit=d779383cb85003d6dabeb976f0845631e07bf463
 baseCommitRev=1
 
-major=5
-minor=0
-build=2
+major=6
+minor=2
+build=1
 versionName=
 
 revision=$(( $(git rev-list --count "$baseCommit..HEAD") + 1 ))
@@ -29,6 +32,8 @@ sed -i s/'\$INSERTVERSIONNAMEPOSTFIX\$'/"$versionName"/g Properties/AssemblyInfo
 sed -i s/'\$INSERTSHORTCOMMITHASH\$'/"$shortCommitHash"/g Properties/AssemblyInfo.cs
 
 sed -i 's/netstandard2.0/net45/' ICSharpCode.Decompiler.csproj
-sed -i 's/Target Name="BeforeBuild"/Target Name="BeforeBuildBak"/' ICSharpCode.Decompiler.csproj
+sed -i '/Target/s/"BeforeBuild"/"BeforeBuildBak"/' ICSharpCode.Decompiler.csproj
+
+patch -Nt -p 2 < EmptyList.patch
 
 msbuild /p:Configuration=Release *.csproj
