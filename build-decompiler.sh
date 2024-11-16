@@ -36,4 +36,7 @@ sed -i '/Target/s/"BeforeBuild"/"BeforeBuildBak"/' ICSharpCode.Decompiler.csproj
 
 patch -Nt -p 2 < EmptyList.patch
 
+nuget restore ../ILSpy.sln
+nuget restore ../ILSpy.sln # seems necessary
 msbuild /p:Configuration=Release *.csproj
+find bin # force successful exit
